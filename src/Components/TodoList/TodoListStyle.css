@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat&display=swap');
+
+ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+
+
+li{
+    background-color: #bfd7ea;
+    color: #44405D;
+    width: 73vw;
+    border-radius: .75rem;
+    height: auto;
+    min-height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.done{
+    text-decoration: line-through;
+    text-decoration-color: #44405D;
+    opacity: .5;
+}
+
+
+li:nth-child(even){
+    background: rgb(145,140,160);
+    background: linear-gradient(90deg, rgba(145,140,160,1) 0%, rgba(33,31,47,1) 100%);
+    color: #bfd7ea;
+
+}
+
+li:nth-child(even) button:nth-child(1n){
+    color: #bfd7ea;
+    
+}
+
+
+li .span{
+    font-family: 'Caveat', cursive;
+    font-size: 1.8rem;
+    letter-spacing: .1rem;
+    margin-left: 1rem;  
+    margin-right: auto;
+}
+
+
+
+li button{
+    cursor: pointer;
+    margin-right: 1rem;
+    font-size: 1.2rem;
+    color: #44405D;
+    border: none;
+    background-color: transparent;
+}
+
+
+
+
+@media only screen and (min-width:850px){
+
+    li{
+        width: 50vw;
+    }
+
+}

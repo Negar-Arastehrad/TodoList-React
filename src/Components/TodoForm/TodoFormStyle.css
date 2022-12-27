@@ -1,0 +1,57 @@
+form{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    margin: 0 auto; 
+}
+
+input[type=text]{
+    width: 60vw;
+    height: 50px;
+    border-radius: .75rem;
+    border: none;
+    outline: none;
+    padding: 1rem;
+    font-size: 1.2rem;
+    color: #44405D;
+}
+
+
+
+input::placeholder{
+    font-size: 1rem;
+    color:#44405D;
+}
+
+
+input:focus{
+    border: 4px solid #bfd7ea !important;
+}
+
+form button{
+    cursor: pointer;
+    border: none;
+    border-radius: .75rem;
+    font-size: 1.2rem;
+    height: 50px;
+    width: 70px;
+    margin-left: 10px;
+    color: #bfd7ea;
+    background-color: #44405D;
+}
+
+form button:hover{
+    color: #44405D;
+    background-color: #bfd7ea;
+    transition: .3s all ease;
+}
+
+
+
+@media only screen and (min-width:850px){
+
+    input{
+        width: 45vw !important;
+    }
+}
+
