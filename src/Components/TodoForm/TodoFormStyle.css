@@ -13,19 +13,13 @@ input[type=text]{
     outline: none;
     padding: 1rem;
     font-size: 1.2rem;
-    color: #44405D;
 }
 
 
 
 input::placeholder{
     font-size: 1rem;
-    color:#44405D;
-}
-
-
-input:focus{
-    border: 4px solid #bfd7ea !important;
+    color: var(--button-color);
 }
 
 form button{
@@ -36,13 +30,9 @@ form button{
     height: 50px;
     width: 70px;
     margin-left: 10px;
-    color: #bfd7ea;
-    background-color: #44405D;
 }
 
 form button:hover{
-    color: #44405D;
-    background-color: #bfd7ea;
     transition: .3s all ease;
 }
 
@@ -55,3 +45,49 @@ form button:hover{
     }
 }
 
+/*Theme*/
+
+input[type=text].dark{
+    color: var(--button-color);
+}
+
+input[type=text].light{
+    color: var(--light-button-color);
+}
+
+input.dark::placeholder{
+    color: var(--button-color);
+}
+
+input.light::placeholder{
+    color: var(--light-button-color);
+}
+
+
+input.dark:focus{
+    border: 4px solid var(--row-color) !important;
+}
+
+input.light:focus{
+    border: 4px solid var(--light-row-color) !important;
+}
+
+form button.dark{
+    color: var(--row-color);
+    background-color:var(--button-color);
+}
+
+form button.light{
+    color: var(--light-row-color);
+    background-color:var(--light-button-color);
+}
+
+form button.dark:hover{
+    color: var(--button-color);
+    background-color: var(--row-color);
+}
+
+form button.light:hover{
+    color: var(--light-button-color);
+    background-color: var(--light-row-color);
+}

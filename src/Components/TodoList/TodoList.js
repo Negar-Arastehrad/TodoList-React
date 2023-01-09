@@ -1,9 +1,12 @@
 import React from "react";
-import { useState } from "react";
 import "./TodoListStyle.css";
+import { useContext } from 'react';
+import { ThemeContext } from "../../Context/ThemeContext";
+
 
 const TodoList = ({ todos, handleDelete, handleEdit,handleComplete}) => {
   
+  const {theme} = useContext(ThemeContext);
   
 
   return (
@@ -11,15 +14,15 @@ const TodoList = ({ todos, handleDelete, handleEdit,handleComplete}) => {
       <div className="container">
         <ul>
           {todos.map((t) => (
-            <li>
-              <p key={t.id} className={t.completed ? 'done span' : 'span'}>{t.todo}</p>
-              <button onClick={() => handleEdit(t.id)}>
+            <li className={theme ? 'light' : 'dark'}>
+              <p key={t.id} className={t.completed ? 'done span' : 'span' } >{t.todo}</p>
+              <button onClick={() => handleEdit(t.id)} className={theme ? 'light' : 'dark'}>
                 <i class="fa-solid fa-pen-to-square"></i>
               </button>
-              <button onClick={() => handleDelete(t.id)}>
+              <button onClick={() => handleDelete(t.id)} className={theme ? 'light' : 'dark'}>
                 <i class="fa-solid fa-xmark"></i>
               </button>
-              <button onClick={()=>handleComplete(t.id)}><i class="fa-solid fa-check"></i></button>
+              <button onClick={()=>handleComplete(t.id)}  className={theme ? 'light' : 'dark'} ><i class="fa-solid fa-check"></i></button>
             </li>
           ))}
         </ul>

@@ -9,4 +9,18 @@ ul{
     list-style: none;
 }
 
+:root{
+    --bg-gradient:linear-gradient(90deg, rgba(33,31,47,1) 0%, rgba(145,140,169,1) 100%);
+    --row-color:#bfd7ea;
+    --row-gradient: linear-gradient(90deg, rgba(145,140,160,1) 0%, rgba(33,31,47,1) 100%);
+    --date-color:pink;
+    --button-color:#44405D;
+    --light-bg-gradient:radial-gradient( circle 400px at 6.8% 8.3%,  rgba(255,244,169,1) 0%, rgba(255,244,234,1) 100.2% );
+    --light-row-color:#bf4342;
+    --light-row-gradient:radial-gradient( circle farthest-corner at 10% 20%, rgba(243,162,42,1) 0.1%, rgba(245,233,0,1) 90% );
+    --light-date-color:#e63946;
+    --light-button-color:#fbb02d;
+}
+
+
 

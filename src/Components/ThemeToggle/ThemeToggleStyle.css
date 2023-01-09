@@ -1,0 +1,34 @@
+.toggle{
+    cursor: pointer;
+    border: none;
+    border-radius: .75rem;
+    font-size: 1.1rem;
+    padding: 1rem;
+    margin: 20px auto;
+    transition: .3s all ease;
+    letter-spacing: 1.5px;
+}
+
+/*Theme*/
+
+.toggle.dark{
+    color: var(--row-color);
+    background-color:var(--button-color);
+}
+
+.toggle.light{
+    color: var(--light-row-color);
+    background-color:var(--light-button-color);
+}
+
+.toggle.dark:hover{
+    color: var(--button-color);
+    background-color: var(--row-color);
+}
+
+.toggle.light:hover{
+    color: var(--light-button-color);
+    background-color: var(--light-row-color);
+}
+
+

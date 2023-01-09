@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useContext } from "react";
 import { useState } from "react";
+import { ThemeContext } from "../../Context/ThemeContext";
 import TodoForm from "../TodoForm/TodoForm";
 import TodoList from "../TodoList/TodoList";
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
 import "./MainStyle.css";
 
 const Main = () => {
+
+  const {theme} = useContext(ThemeContext);
+  
+
+  const getLocalItems = () => {
+    let data = localStorage.getItem('todos');
+    if(data){
+      return JSON.parse(data)
+    }else{
+      return []
+    }
+  }
+
   const [todo, setTodo] = useState("");
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(getLocalItems);
   const [editId, setEditId] = useState(null);
 
-
-
+  useEffect(()=>{
+    localStorage.setItem('todos',JSON.stringify(todos))
+  },todos);
 
 
   const handleSubmit = (e) => {
@@ -72,10 +89,10 @@ const Main = () => {
  
 
   return (
-    <div className="main">
+    <div className={theme ? 'light main': 'dark main'}> 
       <div className="container">
-        <h1>Todo List</h1>
-        <span>{dayName}</span>
+        <h1 className={theme ? 'light' : 'dark'}>Todo List</h1>
+        <span className={theme ? 'light' : 'dark'}>{dayName}</span>
         <TodoForm
           todo={todo}
           setTodo={setTodo}
@@ -88,6 +105,7 @@ const Main = () => {
           handleDelete={handleDelete}
           handleComplete={handleComplete}
         />
+        <ThemeToggle/>
       </div>
     </div>
   );

@@ -10,8 +10,6 @@ ul{
 
 
 li{
-    background-color: #bfd7ea;
-    color: #44405D;
     width: 73vw;
     border-radius: .75rem;
     height: auto;
@@ -25,21 +23,8 @@ li{
 
 .done{
     text-decoration: line-through;
-    text-decoration-color: #44405D;
+    text-decoration-color: var(--button-color);
     opacity: .5;
-}
-
-
-li:nth-child(even){
-    background: rgb(145,140,160);
-    background: linear-gradient(90deg, rgba(145,140,160,1) 0%, rgba(33,31,47,1) 100%);
-    color: #bfd7ea;
-
-}
-
-li:nth-child(even) button:nth-child(1n){
-    color: #bfd7ea;
-    
 }
 
 
@@ -57,7 +42,6 @@ li button{
     cursor: pointer;
     margin-right: 1rem;
     font-size: 1.2rem;
-    color: #44405D;
     border: none;
     background-color: transparent;
 }
@@ -72,3 +56,47 @@ li button{
     }
 
 }
+
+/*Theme*/
+
+li.dark{
+    background-color: var(--row-color);
+    color: var(--button-color);
+}
+
+li.light{
+    background-color: var(--light-row-color);
+    color: var(--light-button-color);
+}
+
+li:nth-child(even).light{
+    background:var(--light-row-gradient);
+    color: var(--light-row-color);
+
+}
+
+li:nth-child(even).dark{
+    background:var(--row-gradient);
+    color: var(--row-color);
+}
+
+li:nth-child(even) button:nth-child(1n).dark{
+    color: var(--row-color);
+}
+
+li:nth-child(even) button:nth-child(1n).light{
+    color: var(--light-row-color);
+    
+}
+
+li button.dark{
+    color: var(--button-color);
+}
+
+li button.light{
+   color: var(--light-button-color); 
+}
+
+
+
+
